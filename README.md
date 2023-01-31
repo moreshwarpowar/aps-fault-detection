@@ -6,8 +6,7 @@
 
 ```bash
 pip install -r requirements.txt
-```
-
+```git 
 ### Step 2 - Run main.py file
 
 ```bash
