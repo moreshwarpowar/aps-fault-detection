@@ -34,7 +34,7 @@ from sensor.entity import config_entity
 if __name__=="__main__":
      try:
           training_pipeline_config = config_entity.TrainingPipelineConfig()
-          data_injestion_config = config_entity.DataInjestionConfig(training_pipeline_config=training_pipeline_config)
-          print(data_injestion_config.to_dict())
+          data_ingestion_config = config_entity.DataIngestionConfig(training_pipeline_config=training_pipeline_config)
+          print(data_ingestion_config.to_dict())
      except Exception as e:
           print(e)

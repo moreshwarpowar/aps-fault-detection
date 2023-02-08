@@ -15,15 +15,15 @@ class TrainingPipelineConfig:
             raise SensorException(e,sys) 
 
 
-class DataInjestionConfig:
+class DataIngestionConfig:
     def __init__(self,training_pipeline_config:TrainingPipelineConfig):
         try:
             self.database_name="aps"
             self.collection_name="sensor"
-            self.data_injestion_dir=os.path.join(training_pipeline_config.artifact_dir,"data_injestion")
-            self.feature_store_dir= os.path.join(self.data_injestion_dir,"feature")
-            self.train_file_path=os.path.join(self.data_injestion_dir,"dataset",TRAIN_FILE_NAME)
-            self.test_file_path = os.path.join(self.data_injestion_dir,"dataset",TEST_FILE_NAME)
+            self.data_ingestion_dir=os.path.join(training_pipeline_config.artifact_dir,"data_ingestion")
+            self.feature_store_dir= os.path.join(self.data_ingestion_dir,"feature")
+            self.train_file_path=os.path.join(self.data_ingestion_dir,"dataset",TRAIN_FILE_NAME)
+            self.test_file_path = os.path.join(self.data_ingestion_dir,"dataset",TEST_FILE_NAME)
             self.test_size=0.02
         except Exception as e:
             raise SensorException(e,sys)
