@@ -4,11 +4,11 @@ import json
 # Provide the mongodb localhost url to connect python to mongodb.
 import os
 @dataclass
-class EnviromentVariable():
+class EnviromentVariable:
     mongo_db_url:str = os.getenv("MONGO_DB_URL")
     aws_access_key_id:str = os.getenv("AWS_ACCESS_KEY_ID")
     aws_access_secret_key:str = os.getenv("AWS_ACCESS_SECRET_KEY")
 
 
-env_var=EnviromentVariable()
+env_var = EnviromentVariable()
 mongo_client = pymongo.MongoClient(env_var.mongo_db_url)
