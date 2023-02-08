@@ -7,6 +7,8 @@ import os
 class EnviromentVariable():
     mongo_db_url:str = os.getenv("MONGO_DB_URL")
     aws_access_key_id:str = os.getenv("AWS_ACCESS_KEY_ID")
-    aws_access_secret_key 
+    aws_access_secret_key:str = os.getenv("AWS_ACCESS_SECRET_KEY")
 
-client = pymongo.MongoClient("mongodb://localhost:27017/neurolabDB")
+
+env_var=EnviromentVariable()
+mongo_client = pymongo.MongoClient(env_var.mongo_db_url)

@@ -1,6 +1,6 @@
 import pymongo
 
-# Provide the mongodb localhost url to connect python to mongodb.
+"""# Provide the mongodb localhost url to connect python to mongodb.
 client = pymongo.MongoClient("mongodb://localhost:27017/neurolabDB")
 
 # Database Name
@@ -23,3 +23,13 @@ all_record = collection.find()
 # Printing all records present in the collection
 for idx, record in enumerate(all_record):
      print(f"{idx}: {record}")
+"""
+
+from sensor.utils import get_collection_as_dataframe
+import sys,os
+
+if __name__=="__main__":
+     try:
+          get_collection_as_dataframe(database_name="aps", collection_name="sensor")
+     except Exception as e:
+          print(e)
