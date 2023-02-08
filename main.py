@@ -24,12 +24,17 @@ all_record = collection.find()
 for idx, record in enumerate(all_record):
      print(f"{idx}: {record}")
 """
-
+from sensor.logger import logging
+from sensor.exception import SensorException
 from sensor.utils import get_collection_as_dataframe
 import sys,os
+from sensor.entity import config_entity
+
 
 if __name__=="__main__":
      try:
-          get_collection_as_dataframe(database_name="aps", collection_name="sensor")
+          training_pipeline_config = config_entity.TrainingPipelineConfig()
+          data_injestion_config = config_entity.DataInjestionConfig(training_pipeline_config=training_pipeline_config)
+          print(data_injestion_config.to_dict())
      except Exception as e:
           print(e)
